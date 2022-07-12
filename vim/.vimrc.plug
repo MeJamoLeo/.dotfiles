@@ -1,19 +1,9 @@
 call plug#begin()
-" The default plugin directory will be as follows:
-"   - Vim (Linux/macOS): '~/.vim/plugged'
-"   - Vim (Windows): '~/vimfiles/plugged'
-"   - Neovim (Linux/macOS/Windows): stdpath('data') . '/plugged'
-" You can specify a custom plugin directory by passing it as the argument
-"   - e.g. `call plug#begin('~/.vim/plugged')`
-"   - Avoid using standard Vim directory names like 'plugin'
-
-" Make sure you use single quotes
-
 Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets' " Multiple Plug commands can be written in a single line using | separators
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP
 Plug 'rebelot/kanagawa.nvim' " colorscheme
-
-" Initialize plugin system
+Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
+Plug 'junegunn/fzf.vim'
 call plug#end()
 
 "------------------------------------------
