@@ -1,2 +1,2 @@
 inoremap <silent> jj <ESC>
-" noremap <ESC><ESC> :noh<CR>
+noremap <ESC><ESC> :nohlsearch<CR><ESC>
