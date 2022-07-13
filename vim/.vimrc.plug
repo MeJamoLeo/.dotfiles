@@ -3,9 +3,19 @@ Plug 'SirVer/ultisnips' | Plug 'honza/vim-snippets' " Multiple Plug commands can
 Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
+Plug 'sainnhe/gruvbox-material'
 call plug#end()
 
 "------------------------------------------
 " SirVer/ultisnips
 "------------------------------------------
 let g:UltiSnipsExpandTrigger='<c-k>'
+
+"------------------------------------------
+" colorscheme plugins
+"------------------------------------------
+colorscheme gruvbox-material
+
+"------------------------------------------
+"
+"------------------------------------------
