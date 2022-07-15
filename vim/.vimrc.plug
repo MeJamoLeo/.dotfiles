@@ -4,11 +4,13 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'} " LSP
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'sainnhe/gruvbox-material'
+Plug 'junegunn/goyo.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'jiangmiao/auto-pairs'
+Plug 'tpope/vim-surround'
 call plug#end()
 
-"------------------------------------------
-" SirVer/ultisnips
-"------------------------------------------
+"------------------------------------------ SirVer/ultisnips ------------------------------------------
 let g:UltiSnipsExpandTrigger='<c-k>'
 
 "------------------------------------------
@@ -16,6 +18,3 @@ let g:UltiSnipsExpandTrigger='<c-k>'
 "------------------------------------------
 colorscheme gruvbox-material
 
-"------------------------------------------
-"
-"------------------------------------------
