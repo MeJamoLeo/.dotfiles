@@ -3,9 +3,20 @@ snippet ac "template for atcoder"
 using namespace std;
 
 int main() {
+    $0
     cout <<  << endl;
     return 0;
 }
+endsnippet
+
+snippet -- "sample output"
+cout << "-------------" << endl;
+endsnippet
+
+snippet vec "vector int"
+vector<${1:int}> ${2:A}(${3:N});
+for (int i = 0; i < ${3:N}; i++) cin >> ${2:A}.at(i);
+$0
 endsnippet
 
 #priority -50
