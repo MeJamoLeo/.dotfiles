@@ -1,4 +1,6 @@
 if has('nvim')
-    command! -nargs=* Term split | wincmd j | terminal <args>
+    command! -nargs=* Term split | wincmd j | resize 20 | terminal <args>
     command! -nargs=* Termv vsplit | wincmd l | terminal <args>
+
 endif	
+noremap <Leader><Enter> :Term<CR>
