@@ -1,2 +1,10 @@
 inoremap <silent> jj <ESC>
 noremap <ESC><ESC> :nohlsearch<CR><ESC>
+
+let mapleader = " "
+noremap <Leader>r :vs ~/.vimrc<CR>
+noremap <Leader>p :vs ~/.vimrc.plug<CR>
+noremap <Leader>m :vs ~/.vimrc.maps<CR>
+noremap <Leader>f :vs ~/.vimrc.funcs<CR>
+
+noremap <Leader>S :source %<CR>
