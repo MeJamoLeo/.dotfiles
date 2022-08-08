@@ -5,6 +5,7 @@ let mapleader = " "
 noremap <Leader>r :vs ~/.vimrc<CR>
 noremap <Leader>p :vs ~/.vimrc.plug<CR>
 noremap <Leader>m :vs ~/.vimrc.maps<CR>
-noremap <Leader>f :vs ~/.vimrc.funcs<CR>
+noremap <Leader>F :vs ~/.vimrc.funcs<CR>
 
 noremap <Leader>S :source %<CR>
+noremap <Leader>t :tabnew <CR>
