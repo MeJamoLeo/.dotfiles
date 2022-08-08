@@ -10,22 +10,21 @@ Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
 
 Plug 'jiangmiao/auto-pairs'
-Plug 'tpope/vim-surround'
-
 Plug 'luochen1990/rainbow'
-
-Plug 'morhetz/gruvbox'
+Plug 'xiyaowong/nvim-transparent'
+Plug 'srcery-colors/srcery-vim'
+Plug 'ayu-theme/ayu-vim'
 call plug#end()
+
+"------------------------------------------ 
+"xiyaowong/nvim-transparent
+"------------------------------------------
+let g:transparent_enabled = v:true
 
 "------------------------------------------ 
 "SirVer/ultisnips 
 "------------------------------------------
 let g:UltiSnipsExpandTrigger='<c-k>'
-
-"------------------------------------------
-" colorscheme plugins
-"------------------------------------------
-colorscheme gruvbox
 
 "------------------------------------------
 " rainbow (document)
@@ -203,6 +202,15 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
 "------------------------------------------ 
+"ayu-theme/ayu-vim
+"------------------------------------------
+set termguicolors     " enable true colors support
+"let ayucolor="light"  " for light version of theme
+"let ayucolor="mirage" " for mirage version of theme
+"let ayucolor="dark"   " for dark version of theme
+"colorscheme ayu
+colorscheme srcery
+
 "------------------------------------------ 
 "easymotion/vim-easymotion
 "------------------------------------------
