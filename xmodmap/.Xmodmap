@@ -11,9 +11,9 @@ add mod4 = Super_L
 !
 ! Swap Caps_Lock and Control_L
 !
-remove Lock = Caps_Lock
-remove Control = Control_L
-keysym Control_L = Caps_Lock
-keysym Caps_Lock = Control_L
-add Lock = Caps_Lock
-add Control = Control_L
+clear lock
+clear control
+add control = Caps_Lock Control_L Control_R
+keycode 66 = Control_L Control_L NoSymbol NoSymbol
+keycode 37 = Escape
+keycode   9 = Escape Caps_Lock Escape
