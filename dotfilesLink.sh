@@ -14,9 +14,9 @@ esac
 
 case "$SHELL" in
 	/bin/zsh)
-		ln -sf $HOME/.dotfiles/.zshrc $HOME/.zshrc
+		ln -sf $HOME/.dotfiles/zshrc $HOME/.zshrc
 		;;
 	/bin/bash)
-		ln -sf $HOME/.dotfiles/.bashrc $HOME/.bashrc
+		ln -sf $HOME/.dotfiles/bashrc $HOME/.bashrc
 		;;
 esac
