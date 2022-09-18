@@ -7,6 +7,7 @@ set shiftwidth=4
 set laststatus=0
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set t_Co=256
 autocmd TermOpen * startinsert
 
 source ~/.vimrc.plug
