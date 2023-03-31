@@ -111,10 +111,13 @@ if ! shopt -oq posix; then
   fi
 fi
 
-# some more ls aliases
-alias exa='exa --icons'
-alias ls='exa'
-alias bat='batcat'
 
-eval "$(starship init bash)"
+# some more ls aliases
+#alias exa='exa --icons'
+#alias ls='exa'
+#alias bat='batcat'
+#
+#eval "$(starship init bash)"
 export PATH="$HOME/.anyenv/bin:$PATH"
+eval "$(anyenv init -)"
+
