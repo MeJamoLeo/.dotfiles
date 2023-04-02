@@ -1,3 +1,8 @@
+git config --global core.editor "nvim"
+
+mkdir -p $HOME/.config/nvim
+ln -sf $HOME/.dotfiles/vim/init.vim $HOME/.config/nvim/init.vim
+
 ln -sf $HOME/.dotfiles/vim/.vimrc $HOME/.vimrc
 ln -sf $HOME/.dotfiles/vim/.vimrc.maps $HOME/.vimrc.maps
 ln -sf $HOME/.dotfiles/vim/.vimrc.funcs $HOME/.vimrc.funcs
