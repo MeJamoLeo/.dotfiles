@@ -112,6 +112,7 @@ if ! shopt -oq posix; then
 fi
 
 
+
 # some more ls aliases
 #alias exa='exa --icons'
 #alias ls='exa'
@@ -119,5 +120,7 @@ fi
 #
 #eval "$(starship init bash)"
 export PATH="$HOME/.anyenv/bin:$PATH"
+export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
+# export CPLUS_INCLUDE_PATH=/usr/include/c++/11/$CPLUS_INCLUDE_PATH

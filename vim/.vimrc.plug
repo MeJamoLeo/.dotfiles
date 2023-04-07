@@ -6,6 +6,7 @@ Plug 'SirVer/ultisnips'
 Plug 'junegunn/fzf', { 'do': { -> fzf#install() } }
 Plug 'junegunn/fzf.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'simeji/winresizer'
 
 Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
@@ -21,7 +22,8 @@ let g:transparent_enabled = v:true
 "------------------------------------------ 
 "SirVer/ultisnips 
 "------------------------------------------
-let g:UltiSnipsExpandTrigger='<c-k>'
+let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/UltiSnips']
+let g:UltiSnipsEditSplit="tabdo"
 
 "------------------------------------------
 " rainbow (document)
