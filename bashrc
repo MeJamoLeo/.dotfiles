@@ -124,3 +124,5 @@ export PATH="$HOME/.pyenv/bin:$PATH"
 eval "$(anyenv init -)"
 
 # export CPLUS_INCLUDE_PATH=/usr/include/c++/11/$CPLUS_INCLUDE_PATH
+eval "$(starship init bash)"
+

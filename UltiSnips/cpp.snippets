@@ -20,6 +20,27 @@ snippet i "oneline for loop"
 if ($1) $0;
 endsnippet
 
+snippet fi "oneline for loop with i"
+for (int i = 0; i < N; i++)
+{
+    $0
+};
+endsnippet
+
+snippet fj "oneline for loop with i"
+for (int j = 0; j < N; j++)
+{
+    $0
+};
+endsnippet
+
+snippet cm "comment Header"
+/*********************
+Name: Jane Doe
+Coding 01
+Purpose: 1-3 sentences about your program.
+**********************/
+endsnippet
 #priority -50
 #
 #extends c

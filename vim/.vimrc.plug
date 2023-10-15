@@ -11,8 +11,20 @@ Plug 'simeji/winresizer'
 Plug 'jiangmiao/auto-pairs'
 Plug 'luochen1990/rainbow'
 Plug 'xiyaowong/nvim-transparent'
-Plug 'jbfrg/vim-cpp-modern'
+Plug 'bfrg/vim-cpp-modern'
+Plug 'vim-airline/vim-airline'
+Plug 'kdheepak/lazygit.nvim'
 call plug#end()
+
+"------------------------------------------ 
+"airblade/vim-gitgutter
+"------------------------------------------
+let g:gitgutter_enabled = 1
+let g:gitgutter_sign_allow_clobber = 1
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+let g:gitgutter_highlight_lines = 1
 
 "------------------------------------------ 
 "xiyaowong/nvim-transparent
@@ -24,6 +36,7 @@ let g:transparent_enabled = v:true
 "------------------------------------------
 let g:UltiSnipsSnippetDirectories=[$HOME.'/.dotfiles/UltiSnips']
 let g:UltiSnipsEditSplit="tabdo"
+let g:UltiSnipsExpandTrigger="<c-k>"
 
 "------------------------------------------
 " rainbow (document)
@@ -66,10 +79,11 @@ endif
 " Use tab for trigger completion with characters ahead and navigate.
 " NOTE: Use command ':verbose imap <tab>' to make sure tab is not mapped by
 " other plugin before putting this into your config.
-inoremap <silent><expr> <TAB>
-      \ pumvisible() ? "\<C-n>" :
-      \ CheckBackspace() ? "\<TAB>" :
-      \ coc#refresh()
+
+" inoremap <silent><expr> <TAB>
+"      \ pumvisible() ? "\<C-n>" :
+"      \ CheckBackspace() ? "\<TAB>" :
+"      \ coc#refresh()
 inoremap <expr><S-TAB> pumvisible() ? "\<C-p>" : "\<C-h>"
 
 function! CheckBackspace() abort
@@ -198,3 +212,18 @@ nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list.
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
 
+
+"------------------------------------------ 
+" kdheepak/lazygit.nvim 
+"------------------------------------------
+let g:lazygit_floating_window_winblend = 0 " transparency of floating window
+let g:lazygit_floating_window_scaling_factor = 0.9 " scaling factor for floating window
+let g:lazygit_floating_window_border_chars = ['╭','─', '╮', '│', '╯','─', '╰', '│'] " customize lazygit popup window border characters
+let g:lazygit_floating_window_use_plenary = 0 " use plenary.nvim to manage floating window if available
+let g:lazygit_use_neovim_remote = 1 " fallback to 0 if neovim-remote is not installed
+
+let g:lazygit_use_custom_config_file_path = 0 " config file path is evaluated if this value is 1
+let g:lazygit_config_file_path = '' " custom config file path
+
+" setup mapping to call :LazyGit
+nnoremap <silent> <space>lg :LazyGit<CR>
