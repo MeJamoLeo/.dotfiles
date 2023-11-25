@@ -9,3 +9,7 @@ noremap <Leader>F :vs ~/.vimrc.funcs<CR>
 
 noremap <Leader>S :source %<CR>
 noremap <Leader>t :tabnew <CR>
+
+" autocmd FileType netrw nnoremap <buffer> v :execute 'rightbelow vsplit' fnameescape(expand('<cfile>'))<CR><C-w>p
+autocmd FileType netrw nnoremap <buffer> v :execute 'vsplit' fnameescape(expand('<cfile>'))<CR><C-w>L<C-w>p
+autocmd FileType netrw nnoremap <buffer> o :execute 'split' fnameescape(expand('<cfile>'))<CR><C-w>p
