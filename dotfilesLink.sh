@@ -12,8 +12,6 @@ case "$OSTYPE" in
 	darwin*)
 		;;
 	linux*)
-		ln -sf $HOME/.dotfiles/xmodmap/.Xmodmap $HOME/.Xmodmap
-		ln -sf $HOME/.dotfiles/xmodmap/.Xmodmap_original $HOME/.Xmodmap_original
 		;;
 esac
 
@@ -25,3 +23,5 @@ case "$SHELL" in
 		ln -sf $HOME/.dotfiles/bashrc $HOME/.bashrc
 		;;
 esac
+
+ ln -sf $HOME/.dotfiles/lldbinit $HOME/.lldbinit
