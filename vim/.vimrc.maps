@@ -3,13 +3,16 @@ noremap <ESC><ESC> :nohlsearch<CR><ESC>
 
 let mapleader = " "
 noremap <Leader>rc :vs ~/.vimrc<CR>
-noremap <Leader>vp :vs ~/.vimrc.plug<CR>
+noremap <leader>vp :vs ~/.vimrc.plug<cr>
 noremap <Leader>vm :vs ~/.vimrc.maps<CR>
 noremap <Leader>F :vs ~/.vimrc.funcs<CR>
 
 noremap <Leader>S :source %<CR>
 noremap <Leader>t :tabnew <CR>
+noremap <Leader><Enter> :Term<CR>
+" This maps <Leader>acT to open a new horizontal split with a terminal and then executes your commands
+" noremap <Leader>aT :vsplit | terminal <CR>g++ main.cpp && oj t -d tests/<CR>
+" noremap <Leader>aS :vsplit | terminal oj s main.cpp<CR>
 
-" autocmd FileType netrw nnoremap <buffer> v :execute 'rightbelow vsplit' fnameescape(expand('<cfile>'))<CR><C-w>p
 autocmd FileType netrw nnoremap <buffer> v :execute 'vsplit' fnameescape(expand('<cfile>'))<CR><C-w>L<C-w>p
 autocmd FileType netrw nnoremap <buffer> o :execute 'split' fnameescape(expand('<cfile>'))<CR><C-w>p
