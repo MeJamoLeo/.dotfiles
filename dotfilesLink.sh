@@ -1,5 +1,8 @@
 git config --global core.editor "nvim"
 
+ln -s $HOME/.dotfiles/i3 $HOME/.config/i3
+chmod +x $HOME/.dotfiles/i3/scripts/*
+
 mkdir -p $HOME/.config/nvim
 ln -sf $HOME/.dotfiles/vim/init.vim $HOME/.config/nvim/init.vim
 
