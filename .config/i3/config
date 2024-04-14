@@ -2,20 +2,14 @@
 #
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
-# windows button is mod
-set $mod Mod4
-
-#set $term i3-sensible-terminal
-set $term alacritty
-
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:Monospace 5
 # use Pop OS standard font
-font pango:Fira Sans 11
-
+font pango:Fira Sans 8
+# Remove the title bar in i3wm
+for_window [class=".*"] border pixel 0
 
 # mouse_warping moves mouse to center of window that takes focus (annoying)
 mouse_warping none
@@ -26,12 +20,13 @@ focus_on_window_activation none
 #force_display_urgency_hint 0 ms
 #focus_on_window_activation urgent
 
-# Make the currently focused window a scratchpad
-bindsym $mod+Shift+BackSpace move scratchpad
 
-# Show the first scratchpad window
-bindsym $mod+backslash scratchpad show
+# windows button is mod
+set $mod Mod4
 
+# ================================
+# Floationg
+# ================================
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
@@ -39,30 +34,37 @@ floating_modifier $mod
 floating_minimum_size 150 x 150
 floating_maximum_size 2500 x 1500
 
-# start a terminal
-bindsym $mod+t exec $term
+# ================================
+# Hotkey
+# ================================
+set $term alacritty
+set $browser qutebrowser
 
-# start dmenu (rofi)
+bindsym $mod+t exec $term
+bindsym $mod+b exec $browser
+
+bindsym $mod+q kill
+bindsym $mod+Escape exec --no-startup-id ~/.config/i3/scripts/blur-lock
+
 bindsym $mod+d exec rofi -show combi -combi-modi drun
+
+
+# TODO: Need fix
+# bindsym Print exec "scrot -s /tmp/screenshot.png -e 'xclip -selection clipboard -target image/png -i /tmp/screenshot.png'"
+bindsym $mod+Shift+d exec rofi
+## Make the currently focused window a scratchpad
+bindsym $mod+Shift+BackSpace move scratchpad
+## Show the first scratchpad window
+bindsym $mod+backslash scratchpad show
 # an "alt-tab" which shows window list
 bindsym Mod1+Tab exec rofi -show window
-
-# kill focused window
-bindsym $mod+Shift+q kill
+# TODO: End
 
 # change focus (tweaked from defaults to be more VIM-like)
 bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
-
-# move to monitor (tweaked from defaults to be more VIM-like)
-bindsym $mod+Control+Shift+Up move workspace to output up
-bindsym $mod+Control+Shift+Down move workspace to output down
-bindsym $mod+Control+Shift+k move workspace to output up
-bindsym $mod+Control+Shift+j move workspace to output down
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -73,12 +75,16 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
-
-# alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
+
+# move to monitor (tweaked from defaults to be more VIM-like)
+bindsym $mod+Control+Shift+Up move workspace to output up
+bindsym $mod+Control+Shift+Down move workspace to output down
+bindsym $mod+Control+Shift+k move workspace to output up
+bindsym $mod+Control+Shift+j move workspace to output down
 
 # split in horizontal orientation (adds Control, due to our VIM-like tweak)
 bindsym $mod+Control+h split h
@@ -88,14 +94,14 @@ bindsym $mod+Control+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle
 
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
 
 # I don't seem to need this much, I use the mouse :(
 # change focus between tiling / floating windows
@@ -107,6 +113,10 @@ bindsym $mod+a focus parent
 # focus the child container
 bindsym $mod+z focus child
 
+
+# ================================
+# WorkSpace
+# ================================
 # Named workspaces
 set $ws1 1
 set $ws2 2
