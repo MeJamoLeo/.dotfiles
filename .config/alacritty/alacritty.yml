@@ -22,7 +22,7 @@ font:
     family: Fira Mono
     style: Bold Italic
 
-  size: 11
+  size: 9
 
 schemes:
   # KDE Breeze (Ported from Konsole)
