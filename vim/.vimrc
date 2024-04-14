@@ -10,6 +10,7 @@ set expandtab
 set laststatus=2
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«,nbsp:%
+set termguicolors
 set t_Co=256
 autocmd TermOpen * startinsert
 

@@ -14,6 +14,8 @@ Plug 'xiyaowong/nvim-transparent'
 Plug 'bfrg/vim-cpp-modern'
 Plug 'vim-airline/vim-airline'
 Plug 'kdheepak/lazygit.nvim'
+Plug 'norcalli/nvim-colorizer.lua'
+Plug 'jacoborus/tender.vim'
 call plug#end()
 
 "------------------------------------------ 
@@ -228,3 +230,31 @@ let g:lazygit_config_file_path = '' " custom config file path
 
 " setup mapping to call :LazyGit
 nnoremap <silent> <space>lg :LazyGit<CR>
+
+"------------------------------------------ 
+" norcalli/nvim-colorizer.lua'
+"-------------------------------------------
+lua << EOF
+require'colorizer'.setup(
+  {'*';},                        -- This will enable colorizer for all file types
+  {
+    RGB      = true;             -- #RGB hex codes
+    RRGGBB   = true;             -- #RRGGBB hex codes
+    names    = true;             -- "Name" codes like Blue
+    RRGGBBAA = true;             -- #RRGGBBAA hex codes
+    rgb_fn   = true;             -- CSS rgb() and rgba() functions
+    hsl_fn   = true;             -- CSS hsl() and hsla() functions
+    css      = true;             -- Enable all CSS features: rgb_fn, hsl_fn
+    css_fn   = true;             -- Enable all CSS *functions*: rgb_fn, hsl_fn
+  }
+)
+EOF
+" If you have vim >=8.0 or Neovim >= 0.1.5
+if (has("termguicolors"))
+ set termguicolors
+endif
+
+" Theme
+syntax enable
+colorscheme tender
+let g:airline_theme = 'tender'

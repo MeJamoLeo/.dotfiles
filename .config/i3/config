@@ -9,7 +9,7 @@
 # use Pop OS standard font
 font pango:Fira Sans 8
 # Remove the title bar in i3wm
-for_window [class=".*"] border pixel 0
+for_window [class=".*"] border pixel 3
 
 # mouse_warping moves mouse to center of window that takes focus (annoying)
 mouse_warping none
@@ -52,10 +52,6 @@ bindsym $mod+d exec rofi -show combi -combi-modi drun
 # TODO: Need fix
 # bindsym Print exec "scrot -s /tmp/screenshot.png -e 'xclip -selection clipboard -target image/png -i /tmp/screenshot.png'"
 bindsym $mod+Shift+d exec rofi
-## Make the currently focused window a scratchpad
-bindsym $mod+Shift+BackSpace move scratchpad
-## Show the first scratchpad window
-bindsym $mod+backslash scratchpad show
 # an "alt-tab" which shows window list
 bindsym Mod1+Tab exec rofi -show window
 # TODO: End
@@ -65,6 +61,7 @@ bindsym $mod+h focus left
 bindsym $mod+j focus down
 bindsym $mod+k focus up
 bindsym $mod+l focus right
+
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
@@ -75,22 +72,26 @@ bindsym $mod+Shift+h move left
 bindsym $mod+Shift+j move down
 bindsym $mod+Shift+k move up
 bindsym $mod+Shift+l move right
+
 bindsym $mod+Shift+Left move left
 bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# move to monitor (tweaked from defaults to be more VIM-like)
-bindsym $mod+Control+Shift+Up move workspace to output up
-bindsym $mod+Control+Shift+Down move workspace to output down
-bindsym $mod+Control+Shift+k move workspace to output up
-bindsym $mod+Control+Shift+j move workspace to output down
+# move focused window across the workspace
+bindsym $mod+Control+j move window to workspace prev
+bindsym $mod+Control+k move window to workspace next
 
-# split in horizontal orientation (adds Control, due to our VIM-like tweak)
-bindsym $mod+Control+h split h
+# Move all windows to the specified output
+bindsym $mod+Control+Shift+Up exec --no-startup-id i3-msg [workspace=__focused__] move window to output up, focus output up
+bindsym $mod+Control+Shift+Down exec --no-startup-id i3-msg [workspace=__focused__] move window to output down, focus output down
+bindsym $mod+Control+Shift+Left exec --no-startup-id i3-msg [workspace=__focused__] move window to output left, focus output left
+bindsym $mod+Control+Shift+Right exec --no-startup-id i3-msg [workspace=__focused__] move window to output rightr focus output right
 
-# split in vertical orientation (adds Control to match horizontal)
-bindsym $mod+Control+v split v
+
+# split
+bindsym $mod+backslash split h
+bindsym $mod+minus split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -128,11 +129,39 @@ set $ws7 7
 set $ws8 8
 set $ws9 9
 set $ws0 10
+set $ws2-1 11
+set $ws2-2 12
+set $ws2-3 13
+set $ws2-4 14
+set $ws2-5 15
+set $ws2-6 16
+set $ws2-7 17
+set $ws2-8 18
+set $ws2-9 19
+set $ws2-0 20
 
 # keep certain workspaces on laptop display (does nothing if you don't have eDP-1)
+workspace "$ws1" output eDP-1
 workspace "$ws2" output eDP-1
+workspace "$ws3" output eDP-1
+workspace "$ws4" output eDP-1
+workspace "$ws5" output eDP-1
+workspace "$ws6" output eDP-1
+workspace "$ws7" output eDP-1
+workspace "$ws8" output eDP-1
 workspace "$ws9" output eDP-1
 workspace "$ws0" output eDP-1
+
+workspace "$ws2-1" output DP-3
+workspace "$ws2-2" output DP-3
+workspace "$ws2-3" output DP-3
+workspace "$ws2-4" output DP-3
+workspace "$ws2-5" output DP-3
+workspace "$ws2-6" output DP-3
+workspace "$ws2-7" output DP-3
+workspace "$ws2-8" output DP-3
+workspace "$ws2-9" output DP-3
+workspace "$ws2-0" output DP-3
 
 # switch to workspace
 bindsym $mod+1 workspace number $ws1
@@ -146,6 +175,17 @@ bindsym $mod+8 workspace number $ws8
 bindsym $mod+9 workspace number $ws9
 bindsym $mod+0 workspace number $ws0
 
+bindsym $mod+Control+1 workspace number $ws2-1
+bindsym $mod+Control+2 workspace number $ws2-2
+bindsym $mod+Control+3 workspace number $ws2-3
+bindsym $mod+Control+4 workspace number $ws2-4
+bindsym $mod+Control+5 workspace number $ws2-5
+bindsym $mod+Control+6 workspace number $ws2-6
+bindsym $mod+Control+7 workspace number $ws2-7
+bindsym $mod+Control+8 workspace number $ws2-8
+bindsym $mod+Control+9 workspace number $ws2-9
+bindsym $mod+Control+0 workspace number $ws2-0
+
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace number $ws1
 bindsym $mod+Shift+2 move container to workspace number $ws2
@@ -158,6 +198,16 @@ bindsym $mod+Shift+8 move container to workspace number $ws8
 bindsym $mod+Shift+9 move container to workspace number $ws9
 bindsym $mod+Shift+0 move container to workspace number $ws0
 
+bindsym $mod+Control+Shift+1 move container to workspace number $ws2-1
+bindsym $mod+Control+Shift+2 move container to workspace number $ws2-2
+bindsym $mod+Control+Shift+3 move container to workspace number $ws2-3
+bindsym $mod+Control+Shift+4 move container to workspace number $ws2-4
+bindsym $mod+Control+Shift+5 move container to workspace number $ws2-5
+bindsym $mod+Control+Shift+6 move container to workspace number $ws2-6
+bindsym $mod+Control+Shift+7 move container to workspace number $ws2-7
+bindsym $mod+Control+Shift+8 move container to workspace number $ws2-8
+bindsym $mod+Control+Shift+9 move container to workspace number $ws2-9
+bindsym $mod+Control+Shift+0 move container to workspace number $ws2-0
 # reload the configuration file
 bindsym $mod+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
