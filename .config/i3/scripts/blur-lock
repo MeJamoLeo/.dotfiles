@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
+# Set LC_ALL to a common locale
+export LC_ALL=C
 
 PICTURE=/tmp/i3lock.png
 SCREENSHOT="scrot -z $PICTURE"
